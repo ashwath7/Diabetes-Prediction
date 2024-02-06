@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <!-- Link to bootstrap CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Link to custom CSS file -->
+  <link rel="stylesheet" href="D:\Data_science\ml\End-to-End-Diabetes-Prediction\templates\style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card mt-5">
+          <div class="card-header bg-primary text-white">
+            <h1>Diabetes Prediction</h1>
+          </div>
+          <div class="card-body">
+            <form action="{{ url_for('predict_datapoint')}}" method="post">
+              <div class="form-group">
+                <label for="Pregnancies">Pregnancies</label>
+                <input type="text" name="Pregnancies" id="Pregnancies" class="form-control" placeholder="Pregnancies" required="required">
+              </div>
+              <div class="form-group">
+                <label for="Glucose">Glucose</label>
+                <input type="text" name="Glucose" id="Glucose" class="form-control" placeholder="Glucose" required="required">
+              </div>
+              <div class="form-group">
+                <label for="BloodPressure">BloodPressure</label>
+                <input type="text" name="BloodPressure" id="BloodPressure" class="form-control" placeholder="BloodPressure" required="required">
+              </div>
+              <div class="form-group">
+                <label for="SkinThickness">SkinThickness</label>
+                <input type="text" name="SkinThickness" id="SkinThickness" class="form-control" placeholder="SkinThickness" required="required">
+              </div>
+              <div class="form-group">
+                <label for="Insulin">Insulin</label>
+                <input type="text" name="Insulin" id="Insulin" class="form-control" placeholder="Insulin" required="required">
+              </div>
+              <div class="form-group">
+                <label for="BMI">BMI</label>
+                <input type="text" name="BMI" id="BMI" class="form-control" placeholder="BMI" required="required">
+              </div>
+              <div class="form-group">
+                <label for="DiabetesPedigreeFunction">DiabetesPedigreeFunction</label>
+                <input type="text" name="DiabetesPedigreeFunction" id="DiabetesPedigreeFunction" class="form-control" placeholder="DiabetesPedigreeFunction" required="required">
+              </div>
+              <div class="form-group">
+                <label for="Age">Age</label>
+                <input type="text" name="Age" id="Age" class="form-control" placeholder="Age" required="required">
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+              </div>
+            </form>
+          </div>
+          {{result}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Link to jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <!-- Link to bootstrap CDN -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Link to custom JS file -->
+  <script src="D:\Data_science\ml\End-to-End-Diabetes-Prediction\templates\script.js"></script>
+</body>
+</html>
